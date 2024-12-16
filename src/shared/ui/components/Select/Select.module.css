@@ -1,0 +1,25 @@
+.selectWrapper {
+    position: relative;
+}
+
+.select {
+    padding: 16px 40px 16px 20px;
+    border-radius: 12px;
+    border: 0;
+    background-color: var(--color-light-100);
+    appearance: none;
+    width: 282px;
+    line-height: var(--line-height-m);
+    font-size: var(--font-size-m);
+}
+
+.select:focus-visible {
+    outline: 2px solid var(--color-accent);
+}
+
+.arrowDown {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    pointer-events: none;
+}

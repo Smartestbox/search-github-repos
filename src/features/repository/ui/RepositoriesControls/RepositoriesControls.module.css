@@ -1,0 +1,13 @@
+.filtersWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.info {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-l);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-blue-900);
+}

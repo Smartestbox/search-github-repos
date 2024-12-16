@@ -1,0 +1,23 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import HeartFilled from "@/shared/ui/icons/HeartFilled";
+import { Archive, CommandLine, CopyURL, Edit, Folder, GithubFork, GithubStarFilled, HeartOutlined, } from "@/shared/ui/icons";
+import CopyToClipboard from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
+import { Link } from "react-router";
+import { IconRoundWrapper } from "@/shared/ui/components/IconRoundWrapper/IconRoundWrapper";
+import { observer } from "mobx-react-lite";
+import { getDate } from "@/shared/lib/getDate";
+import { repositoriesStore } from "@/entities/repository";
+import s from "./DetailedRepositoryCard.module.css";
+export const DetailedRepositoryCard = observer(({ className, id }) => {
+    const { getRepository, toggleFavorite } = repositoriesStore;
+    const repository = getRepository(+id);
+    if (!repository) {
+        return _jsx("h1", { className: s.errorTitle, children: "Repository not found" });
+    }
+    const { language, archived, isFavorite, html_url, owner: { avatar_url }, full_name, description, stargazers_count, forks_count, created_at, updated_at, } = repository;
+    const handleFavoriteClick = () => {
+        toggleFavorite(Number(id));
+    };
+    return (_jsxs("div", { className: `${s.card} ${className ? className : ""}`, children: [_jsx("h2", { className: s.title, children: "\u041F\u0440\u043E\u0444\u0438\u043B\u044C" }), _jsxs("div", { className: s.header, children: [_jsx("img", { src: avatar_url, alt: "avatar", width: 125, height: 125, className: s.avatar }), _jsxs("div", { className: s.about, children: [_jsx("p", { className: s.shortPath, children: full_name }), _jsx("p", { className: s.repoDescription, children: description })] })] }), _jsxs("div", { className: s.statistics, children: [_jsxs("div", { className: s.statistic, children: [_jsx(IconRoundWrapper, { children: _jsx(GithubStarFilled, {}) }), _jsxs("div", { className: s.statInfo, children: [_jsx("span", { className: s.metaName, children: stargazers_count }), _jsx("span", { className: s.metaDescription, children: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0437\u0432\u0435\u0437\u0434" })] })] }), _jsxs("div", { className: s.statistic, children: [_jsx(IconRoundWrapper, { children: _jsx(GithubFork, {}) }), _jsxs("div", { className: s.statInfo, children: [_jsx("span", { className: s.metaName, children: forks_count }), _jsx("span", { className: s.metaDescription, children: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0444\u043E\u0440\u043A\u043E\u0432" })] })] }), _jsxs("div", { className: s.statistic, children: [_jsx(IconRoundWrapper, { children: _jsx(Archive, {}) }), _jsxs("div", { className: s.statInfo, children: [_jsx("span", { className: s.metaName, children: archived ? "Да" : "Нет" }), _jsx("span", { className: s.metaDescription, children: "\u0412 \u0430\u0440\u0445\u0438\u0432\u0435" })] })] }), _jsxs("div", { className: s.statistic, children: [_jsx(IconRoundWrapper, { children: _jsx(CommandLine, {}) }), _jsxs("div", { className: s.statInfo, children: [_jsx("span", { className: s.metaName, children: language }), _jsx("span", { className: s.metaDescription, children: "\u042F\u0437\u044B\u043A" })] })] }), _jsxs("div", { className: s.statistic, children: [_jsx(IconRoundWrapper, { children: _jsx(Folder, {}) }), _jsxs("div", { className: s.statInfo, children: [_jsx("span", { className: s.metaName, children: getDate(created_at) }), _jsx("span", { className: s.metaDescription, children: "\u0421\u043E\u0437\u0434\u0430\u043D\u043E" })] })] }), _jsxs("div", { className: s.statistic, children: [_jsx(IconRoundWrapper, { children: _jsx(Edit, {}) }), _jsxs("div", { className: s.statInfo, children: [_jsx("span", { className: s.metaName, children: getDate(updated_at) }), _jsx("span", { className: s.metaDescription, children: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u043E" })] })] })] }), _jsx("div", { className: s.divider }), _jsxs("div", { className: s.aboutFooter, children: [_jsxs("div", { className: s.actions, children: [_jsx("button", { className: s.actionWrapper, onClick: handleFavoriteClick, children: isFavorite ? _jsx(HeartFilled, {}) : _jsx(HeartOutlined, {}) }), _jsx(CopyToClipboard, { text: html_url, onCopy: () => toast.info(`Repository's address copied`, { autoClose: 1000 }), children: _jsx("button", { className: s.actionWrapper, children: _jsx(CopyURL, {}) }) })] }), _jsx(Link, { to: html_url, target: "_blank", className: s.linkToRepo, children: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439" })] })] }));
+});

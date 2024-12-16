@@ -1,0 +1,42 @@
+.layout {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 72px 120px 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 120px;
+    height: 72px;
+    background: #3A3A3A;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 96px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}

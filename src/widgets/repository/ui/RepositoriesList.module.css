@@ -1,0 +1,13 @@
+.cardsList {
+    display: flex;
+    flex-wrap: wrap;
+    /*grid-template-columns: repeat(auto-fit, minmax(282px, 4fr));*/
+    justify-content: start;
+    gap: 24px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.spinner {
+    margin-top: 30px;
+}

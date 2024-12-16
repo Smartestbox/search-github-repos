@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    column-gap: 4px;
+    padding: 4px 8px;
+    background-color: rgba(var(--color-dark-500-rgb), 0.08);
+    border-radius: 50%;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+}

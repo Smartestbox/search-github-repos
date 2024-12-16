@@ -1,0 +1,104 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    width: 282px;
+    height: 180px;
+    background-color: white;
+    border: 1px solid rgba(var(--color-dark-500-rgb), 0.12);
+    border-radius: 20px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aboutHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.statistics {
+    display: flex;
+    column-gap: 12px;
+}
+
+.statWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4px;
+    padding: 4px 8px;
+    background-color: var(--color-light-300);
+    border-radius: 12px;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+}
+
+.aboutMain {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-top: 12px;
+}
+
+.userName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
+    font-weight: var(--font-weight-bold);
+}
+
+.repoName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-size-s);
+    color: var(--color-info);
+}
+
+.aboutFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 16px;
+}
+
+.actionWrapper {
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(var(--color-dark-500-rgb), 0.12);
+    border-radius: 8px;
+    background-color: var(--color-light-100);
+}
+
+.linkToRepo {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--color-accent);
+    color: var(--color-light-100);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-s);
+}
