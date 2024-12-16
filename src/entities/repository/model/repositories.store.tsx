@@ -76,7 +76,7 @@ export class RepositoriesStore {
     const index = this.repositories.findIndex(
       (repository) => repository.id === id,
     );
-    if (index < -1) {
+    if (index < 0) {
       return;
     }
 
